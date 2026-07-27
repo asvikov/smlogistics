@@ -1,0 +1,33 @@
+{
+    "vhosts": [
+        { "name": "/notifications" }
+    ],
+    "users": [
+        {
+            "name": "notify_user",
+            "password": "secret",
+            "tags": "administrator"
+        }
+    ],
+    "permissions": [
+        {
+            "user": "notify_user",
+            "vhost": "/notifications",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        }
+    ],
+    "queues": [
+        {
+            "name": "notifications_queue",
+            "vhost": "/notifications",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-max-priority": 10,
+                "x-queue-type": "classic"
+            }
+        }
+    ]
+}

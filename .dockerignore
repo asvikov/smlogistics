@@ -1,0 +1,12 @@
+# Go-specific .dockerignore
+.git/
+.idea/
+.vscode/
+docker/
+node_modules/
+tmp/
+docker-compose.yml
+.gitignore
+*.log
+.env
+*.md
